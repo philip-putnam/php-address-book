@@ -4,6 +4,16 @@
 </head>
 <body>
     <h1>Address Book Home</h1>
+    <h2>Fill out the form to add contacts</h2>
+    <form action='/create_contact' method='post'>
+        <label for='contact_name'>New Contact Name: </label>
+        <input name='contact_name' type='text'>
+        <label for='contact_phone'>Phone Number: </label>
+        <input name='contact_phone' type='text'>
+        <label for='contact_address'>Phone Address: </label>
+        <input name='contact_address' type='text'>
+        <button type='submit'>Add Contact</button>
+    </form>
     {% for contact in contacts %}
         <h3>{{ contact.getName }}</h3>
         <ul>
