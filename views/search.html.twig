@@ -1,0 +1,33 @@
+{{ include('base.html.twig') }}
+
+<html>
+<head>
+    <title>Search Window</title>
+</head>
+<body>
+    <div class="container">
+      <header class="well">
+        <h1>Address Book</h1>
+      </header>
+      {% if search is not empty %}
+          <h3>Your Contact Search Results:</h3>
+          {% for contact in search %}
+              <h3>{{ contact.getName }}</h3>
+              <ul>
+              {% if contact.getPhoneNumber is not empty %}
+                  <li>{{ contact.getPhoneNumber }}</li>
+              {% endif %}
+              {% if contact.getAddress is not empty %}
+                <li>{{ contact.getAddress }}</li>
+              {% endif %}
+              </ul>
+          {% endfor %}
+      {% else %}
+          <h3>Sorry, no matching results!</h3>
+      {% endif %}
+      <div class="form-group" id='search-results'>
+        <a href='/'><button class='btn btn-success'>Home</button></a>
+      </div>
+    </div>
+</body>
+</html>

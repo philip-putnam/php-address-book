@@ -2,6 +2,10 @@ h1 {
   text-align: center;
 }
 
+#search {
+  text-align: right;
+}
+
 .well {
   background-color: #2BBBAD;
   border-radius: 20px;
@@ -10,4 +14,9 @@ h1 {
 .container {
   background-color: #b2dfdb;
   border-radius: 20px;
+  margin-top: 15px;
+}
+
+body {
+  background-color: #00695c;
 }

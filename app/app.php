@@ -38,6 +38,19 @@
         return $app['twig']->render('delete_contacts.html.twig');
     });
 
+    $app->get('/search', function() use ($app) {
+        $reg_exp_pattern = "/(" . $_GET['search'] . ")/i";
+        $contacts = Contact::getAll();
+        $user_search = array();
+        foreach ($contacts as $contact) {
+            if (preg_match($reg_exp_pattern, $contact->getName())){
+                array_push($user_search, $contact);
+            };
+        }
+        return $app['twig']->render('search.html.twig', array('search' => $user_search));
+
+    });
+
 
     return $app;
 ?>
