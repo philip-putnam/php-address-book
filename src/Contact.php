@@ -7,9 +7,9 @@
 
         function __construct($new_name, $new_phone, $new_address)
         {
-            $this->name = $new_name;
-            $this->phone_number = $new_phone;
-            $this->address = $new_address;
+            $this->name = (string) $new_name;
+            $this->phone_number = (string) $new_phone;
+            $this->address = (string) $new_address;
         }
 
         function setName($new_name)

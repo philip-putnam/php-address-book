@@ -1,15 +1,32 @@
+{{ include('base.html.twig') }}
+
 <html>
 <head>
     <title>Add Contact Page</title>
 </head>
 <body>
-    <h1>Address Book</h1>
-    <h3>Successfully Added Contact!</h3>
-    <h4>{{ new_contact.getName }}</h4>
-    <ul>
-        <li>{{ new_contact.getPhoneNumber }}</li>
-        <li>{{ new_contact.getAddress }}</li>
-    <ul>
-    <a href="/"><button>Home</button></a>
+    <div class='container'>
+      <header class="well">
+        <h1>Address Book Home</h1>
+      </header>
+      <div class='row'>
+        <div class='col-md-12'>
+          <h3>Successfully Added Contact!</h3>
+          <h4>{{ new_contact.getName }}</h4>
+          <ul>
+              {% if new_contact.getPhoneNumber is not empty %}
+                <li>{{ new_contact.getPhoneNumber }}</li>
+              {% endif %}
+              {% if new_contact.getPhoneNumber is not empty %}
+                <li>{{ new_contact.getAddress }}</li>
+              {% endif %}
+          <ul>
+        </div>
+      </div>
+      <div class='form-group'>
+        <br>
+        <a href="/"><button class='btn btn-success'>Home</button></a>
+      </div>
+    </div>
 </body>
 </html>

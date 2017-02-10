@@ -1,10 +1,18 @@
+{{ include('base.html.twig') }}
+
 <html>
 <head>
     <title>Error Window</title>
 </head>
 <body>
-    <h1>Address Book</h1>
-    <h3>Ooops, no contact name!</h3>
-    <a href='/'><button type='submit'>Home</button></a>
+    <div class="container">
+      <header class="well">
+        <h1>Address Book Home</h1>
+      </header>
+      <h3>Ooops, no contact name!</h3>
+      <div class="form-group">
+        <a href='/'><button class='btn btn-success'>Home</button></a>
+      </div>
+    </div>
 </body>
 </html>

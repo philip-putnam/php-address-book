@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+}
+
+.well {
+  background-color: #2BBBAD;
+  border-radius: 20px;
+}
+
+.container {
+  background-color: #b2dfdb;
+  border-radius: 20px;
+}

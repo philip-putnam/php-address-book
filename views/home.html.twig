@@ -1,29 +1,45 @@
+{{ include('base.html.twig') }}
+
 <html>
 <head>
     <title>Address Book</title>
 </head>
 <body>
-    <h1>Address Book Home</h1>
+  <div class='container'>
+    <header class="well">
+      <h1>Address Book Home</h1>
+    </header>
     <h2>Fill out the form to add contacts</h2>
-    <form action='/create_contact' method='post'>
-        <label for='contact_name'>New Contact Name: </label>
-        <input name='contact_name' type='text'>
-        <label for='contact_phone'>Phone Number: </label>
-        <input name='contact_phone' type='text'>
-        <label for='contact_address'>Phone Address: </label>
-        <input name='contact_address' type='text'>
-        <button type='submit'>Add Contact</button>
-    </form>
-    <form action='/delete_contacts' method='post'>
-        <button type='submit'>Delete Current Contacts</button>
-    </form>
+    <div class='row'>
+      <div class='col-md-12'>
+        <form action='/create_contact' method='post'>
+            <label for='contact_name'>New Contact Name: </label>
+            <input name='contact_name' type='text'>
+            <label for='contact_phone'>Phone Number: </label>
+            <input name='contact_phone' type='text'>
+            <label for='contact_address'>Phone Address: </label>
+            <input name='contact_address' type='text'>
+            <button type='submit' class='btn btn-primary'>Add Contact</button>
+        </form>
+      </div>
+    </div> <!-- Row closing tag -->
+    <div class='form-group'>
+      <form action='/delete_contacts' method='post'>
+          <br>
+          <button type='submit' class='btn btn-danger'>Delete Current Contacts</button>
+      </form>
+    </div>
     {% for contact in contacts %}
         <h3>{{ contact.getName }}</h3>
         <ul>
-        <li>{{ contact.getPhoneNumber }}</li>
-        <li>{{ contact.getAddress }}</li>
+        {% if contact.getPhoneNumber is not empty %}
+            <li>{{ contact.getPhoneNumber }}</li>
+        {% endif %}
+        {% if contact.getAddress is not empty %}
+          <li>{{ contact.getAddress }}</li>
+        {% endif %}
         </ul>
     {% endfor %}
-
+  </div> <!-- closing div for container -->
 </body>
 </html>
