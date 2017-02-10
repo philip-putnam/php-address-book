@@ -47,9 +47,8 @@ _Please e-mail Philip Putnam, at staplehead989@gmail.com for support with the we
 |Behaviors|Input|Output|
 |---------|-----|------|
 |User navigates to home route ('/') in web browser|Navigate to home URL|Display contacts|
-|User clicks submit at home route ('/')|User clicks submit|User routed to /create_contact route|
 |User fills in form at home route ('/')|User types text in form, clicks submit|User routed to /create_contact route, displays new contact information|
-|User fills in form at home route ('/')|User types text in form, clicks submit|User routed to /create_contact route, displays new contact information & home link to return to home route ('/')|
+|User fills in form at home route ('/')|User types text in form, clicks submit, then home button|User routed to /create_contact route, displays new contact information & home link to return to home route ('/')|
 |User fills in form at home route ('/'), returns to home route|User types text in form, clicks submit, then clicks 'home' link/button|User routed to /create_contact route, displays new contact information & home link to return to home route ('/'), displays contacts (including newly added) and button to delete contacts|
 |User fills in form at home route ('/'), returns to home route, clicks delete|User types text in form, clicks submit, then clicks 'home' link/button, then clicks 'delete contacts' button|User routed to /create_contact route, displays new contact information & home link to return to home route ('/'), displays contacts (including newly added) and button to delete contacts, user directed to '/delete_contacts' confirming deletion of contact list|
 
