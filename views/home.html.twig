@@ -20,7 +20,7 @@
             <label for='contact_name'>New Contact Name: </label>
             <input name='contact_name' type='text' required>
             <label for='contact_phone'>Phone Number: </label>
-            <input name='contact_phone' type='text'>
+            <input name='contact_phone' type='number'>
             <label for='contact_address'>Address: </label>
             <input name='contact_address' type='text'>
             <button type='submit' class='btn btn-primary'>Add Contact</button>
@@ -47,6 +47,13 @@
         {% endif %}
         </ul>
     {% endfor %}
+    <!-- <form action='/delete-contact' method='post' id='delete-contact'>
+        <div class='form-group'>
+            <label for='delete-contact'>Delete a Contact: </label>
+            <input name='delete-contact' type='text' placeholder="Contact name must be an exact match" size='35px'>
+            <button type='submit' class='btn btn-warning'>Delete</button>
+        </div>
+    </form> -->
   </div> <!-- closing div for container -->
 </body>
 </html>

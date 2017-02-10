@@ -50,6 +50,20 @@
         return $app['twig']->render('search.html.twig', array('search' => $user_search));
 
     });
+    // Attempt to get specific delete
+    // $app->post('/delete-contact', function() use ($app) {
+    //     $userDeleteContact = $_POST['delete-contact'];
+    //     $contacts = Contact::getAll();
+    //     $reg_exp_pattern = "/(^" . $_POST['delete-contact'] . "$)/m";
+    //     for ($index = 0; $index < count($contacts); $index++) {
+    //         if (preg_match($reg_exp_pattern, $contacts[$index]->getName())) {
+    //             $contacts[$index] = $contacts[count($contacts)-1];
+    //             array_pop($contacts);
+    //         }
+    //     }
+    //
+    //     return $app->redirect('/');
+    // });
 
 
     return $app;
