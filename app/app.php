@@ -15,7 +15,7 @@
     $app['debug'] = true;
 
     $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
-    
+
     $app->get('/', function() use ($app) {
         return $app['twig']->render('home.html.twig', array('contacts' => Contact::getAll()));
     });
@@ -31,6 +31,11 @@
               return $app['twig']->render('error.html.twig');
         }
 
+    });
+
+    $app->post('/delete_contacts', function() use ($app) {
+        Contact::deleteAll();
+        return $app['twig']->render('delete_contacts.html.twig');
     });
 
 
