@@ -42,7 +42,7 @@ _Please e-mail Philip Putnam, at staplehead989@gmail.com for support with the we
 * _Git_
 * _GitHub_
 
-### Specifications
+## Specifications
 
 |Behaviors|Input|Output|
 |---------|-----|------|
