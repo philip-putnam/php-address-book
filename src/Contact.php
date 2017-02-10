@@ -5,25 +5,30 @@
         private $phone_number;
         private $address;
 
-        function __construct($new_name, $new_phone, $new_address) {
+        function __construct($new_name, $new_phone, $new_address)
+        {
             $this->name = $new_name;
             $this->phone_number = $new_phone;
             $this->address = $new_address;
         }
 
-        function setName($new_name) {
+        function setName($new_name)
+        {
             $this->name = $new_name;
         }
 
-        function getName() {
+        function getName()
+        {
             return $this->name;
         }
 
-        function setPhoneNumber($new_phone) {
+        function setPhoneNumber($new_phone)
+        {
             $this->phone_number = $new_phone;
         }
 
-        function getPhoneNumber() {
+        function getPhoneNumber()
+        {
             return $this->phone_number;
         }
 
@@ -31,8 +36,9 @@
             $this->$address = $new_address;
         }
 
-        function getAddress() {
-            return $this->$address;
+        function getAddress()
+        {
+            return $this->address;
         }
 
         function save() {

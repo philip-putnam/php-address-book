@@ -17,9 +17,9 @@
     $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
 
     $app->get('/', function() use ($app) {
-
-        return $app['twig']->render('home.html.twig');
-
+        $newContact = new Contact("Bob Smith", "503-988-3434", "800 NW Northrup");
+        $newContact->save();
+        return $app['twig']->render('home.html.twig', array('contacts' => Contact::getAll()));
     });
 
 
