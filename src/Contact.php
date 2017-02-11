@@ -53,5 +53,14 @@
             $_SESSION['list_of_contacts'] = array();
         }
 
+        static function deleteAContact($index) {
+            $contacts = $_SESSION['list_of_contacts'];
+            $number_of_contacts = count($contacts);
+            $number_of_contacts -= 1;
+            $contacts[$index] = $contacts[$number_of_contacts];
+            array_pop($contacts);
+            $_SESSION['list_of_contacts'] = $contacts;
+        }
+
     }
 ?>
