@@ -23,4 +23,24 @@ body {
 
 #delete-contact {
   text-align: right;
+  margin-top: 20px;
+}
+
+.contacts {
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 2px;
+}
+
+#number-col, #address-col {
+  border-left: 2px solid black;
+}
+
+.number-col, .address-col, .name-col {
+  text-align: center;
+  padding-top: 5px;
+  font-size: 18px;
+  border-bottom: 1px black solid;
+  border-right: 1px black solid;
+  border-left: 1px black solid;
 }

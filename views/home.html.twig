@@ -35,18 +35,43 @@
     </div>
     {% if contacts is not empty %}
       <h2>Contacts:</h2>
+      <div class="row">
+        <div class='col-md-12 contacts'>
+          <div class="row">
+            <div class='col-md-4'>
+              <h3>Name</h3>
+            </div>
+            <div class='col-md-4' id='number-col'>
+              <h3>Number<h3>
+            </div>
+            <div class='col-md-4' id='address-col'>
+              <h3>Address<h3>
+            </div>
+          </div>
+        </div> <!-- Closing div for col-md-12 -->
+      </div> <!-- Closing div for ROW -->
     {% endif %}
-    {% for contact in contacts %}
-        <h3>{{ contact.getName }}</h3>
-        <ul>
-        {% if contact.getPhoneNumber is not empty %}
-            <li>{{ contact.getPhoneNumber }}</li>
-        {% endif %}
-        {% if contact.getAddress is not empty %}
-          <li>{{ contact.getAddress }}</li>
-        {% endif %}
-        </ul>
-    {% endfor %}
+    <div class="row">
+      <div class='col-md-12 contact-data'>
+        <div class="row">
+          {% for contact in contacts %}
+            <div class='col-md-4 name-col'>
+              {{ contact.getName }}
+            </div>
+            <div class='col-md-4 number-col'>
+              {% if contact.getPhoneNumber is not empty %}
+                  {{ contact.getPhoneNumber }}
+              {% endif %}
+            </div>
+            <div class='col-md-4 address-col'>
+              {% if contact.getAddress is not empty %}
+                {{ contact.getAddress }}
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div> <!-- Closing div for col-md-12 -->
+    </div> <!-- Closing div for ROW -->
     <form action='/delete-contact' method='post' id='delete-contact'>
         <div class='form-group'>
             <label for='delete-contact'>Delete a Contact: </label>
