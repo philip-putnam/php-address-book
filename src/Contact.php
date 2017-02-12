@@ -33,7 +33,7 @@
         }
 
         function setAddress($new_address) {
-            $this->$address = $new_address;
+            $this->address = (string) $new_address;
         }
 
         function getAddress()

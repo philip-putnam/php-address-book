@@ -69,5 +69,22 @@
 
     });
 
+    $app->post('/new-contact-info', function() use ($app) {
+        $chosenContactToEdit = $_POST['edit-contact'];
+        $contacts = Contact::getAll();
+        foreach ($contacts as $contact) {
+            if ($contact->getName() == $chosenContactToEdit) {
+                if ($_POST['edit-phone']) {
+                  $contact->setPhoneNumber($_POST['edit-phone']);
+                }
+                if ($_POST['edit-address']) {
+                  $contact->setAddress($_POST['edit-address']);
+                }
+            }
+        }
+
+        return $app->redirect('/');
+    });
+
     return $app;
 ?>
