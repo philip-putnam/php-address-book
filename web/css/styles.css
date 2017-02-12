@@ -40,7 +40,14 @@ body {
   text-align: center;
   padding-top: 5px;
   font-size: 18px;
-  border-bottom: 1px black solid;
-  border-right: 1px black solid;
-  border-left: 1px black solid;
+  height: 35px;
+  margin-bottom: 2px;
+}
+
+.name-col {
+  text-align: left;
+}
+
+#buttons {
+  float: left;
 }

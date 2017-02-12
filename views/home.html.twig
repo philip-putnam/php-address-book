@@ -34,6 +34,7 @@
       </form>
     </div>
     {% if contacts is not empty %}
+      <a href='/edit-contact'><button type='button'  class='btn btn-success'>Edit contacts</button></a>
       <h2>Contacts:</h2>
       <div class="row">
         <div class='col-md-12 contacts'>
@@ -47,7 +48,7 @@
             <div class='col-md-4' id='address-col'>
               <h3>Address<h3>
             </div>
-          </div>
+          </div> <!-- Closing div for ROW -->
         </div> <!-- Closing div for col-md-12 -->
       </div> <!-- Closing div for ROW -->
     {% endif %}
@@ -56,20 +57,33 @@
         <div class="row">
           {% for contact in contacts %}
             <div class='col-md-4 name-col'>
-              {{ contact.getName }}
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- <form action='/edit-contact'>
+                    {% set contactName = contact.getName %}
+                    <input type='hidden' name='edit-contact'>
+                    <button type='submit'>edit</button>
+                  </form> -->
+                </div>
+                <div class="col-md-6">
+                  {{ contact.getName }}
+                </div>
+              </div>
             </div>
             <div class='col-md-4 number-col'>
-              {% if contact.getPhoneNumber is not empty %}
-                  {{ contact.getPhoneNumber }}
+              {% if contact.getPhoneNumber is empty %}
+                "no contact number"
               {% endif %}
+              {{ contact.getPhoneNumber }}
             </div>
             <div class='col-md-4 address-col'>
-              {% if contact.getAddress is not empty %}
-                {{ contact.getAddress }}
+              {% if contact.getAddress is empty %}
+                "no contact address"
               {% endif %}
+              {{ contact.getAddress }}
             </div>
           {% endfor %}
-        </div>
+        </div> <!-- Closing div for ROW -->
       </div> <!-- Closing div for col-md-12 -->
     </div> <!-- Closing div for ROW -->
     <form action='/delete-contact' method='post' id='delete-contact'>

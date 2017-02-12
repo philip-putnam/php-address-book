@@ -63,5 +63,11 @@
         return $app->redirect('/');
     });
 
+    $app->get('/edit-contact', function() use ($app) {
+
+        return $app['twig']->render('edit-contact.html.twig', array('contacts' => $_SESSION['list_of_contacts']));
+
+    });
+
     return $app;
 ?>
